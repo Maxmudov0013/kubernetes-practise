@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Hello from Mars!"
+echo "Hello from jupiter!"

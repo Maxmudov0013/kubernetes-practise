@@ -1,27 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('stage-1') {
+        stage('Ansible-playbook') {
             steps {
-                echo "stage-1 boshlandi.."
+                // ansiblePlaybook(credentialsId: 'dummy', inventory: 'ansible/inventory', playbook: 'ansible/playbook.yaml')
                 sh '''
-                echo "starting stage-1 process again..."
-                '''
-            }
-        }
-        stage('stage-2') {
-            steps {
-                echo "stage-2 boshlandi.."
-                sh '''
-                echo "starting stage-2 process again..."
-                '''
-            }
-        }
-        stage('stage-3-updated....') {
-            steps {
-                echo 'Deliver....'
-                sh '''
-                echo "starting delivery process..."
+                ansible-playbook -i ansible/inventory ansible/playbook.yaml
                 '''
             }
         }
